@@ -31,3 +31,18 @@ window.addEventListener('scroll', function() {
     }
 });
 
+document.getElementById('language-toggle').addEventListener('click', function() {
+    const isEnglish = this.textContent === 'English';
+    const elementsEs = document.querySelectorAll('.es');
+    const elementsEn = document.querySelectorAll('.en');
+
+    if (isEnglish) {
+        elementsEs.forEach(el => el.style.display = 'none');
+        elementsEn.forEach(el => el.style.display = 'block');
+        this.textContent = 'Español';
+    } else {
+        elementsEs.forEach(el => el.style.display = 'block');
+        elementsEn.forEach(el => el.style.display = 'none');
+        this.textContent = 'English';
+    }
+});
